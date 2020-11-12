@@ -7,6 +7,10 @@ contract HealthApp {
   uint age;
   uint height;
   uint weight;
+  uint bmi;
+  uint runDistance;
+  uint walkDistance;
+  uint yogaDuration;
   
 
 }
