@@ -17,5 +17,15 @@ contract HealthApp {
       return runDistance;
   }
   
+  function trackWalk(uint distance) public returns(uint) {
+      walkDistance = distance;
+      return walkDistance;
+  }
+  
+  function trackYoga(uint time) public returns(uint) {
+      yogaDuration = time;
+      return yogaDuration;
+  }
+  
 
 }
