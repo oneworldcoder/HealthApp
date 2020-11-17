@@ -15,22 +15,26 @@ contract HealthApp {
       
   }
   
+  Person[] public people;
+  
+  mapping (address => individual) public owners;
   
   
-  function trackRun(uint distance) public returns(uint) {
-      runDistance = distance;
-      return runDistance;
-  }
+  function track(string memory name, uint age, uint height, uint weight, uint bmi, uint runDistance, uint walkDistance, uint yogaDuration) public {
+      address creator = msg.sender;
+      
+      Person memory newPerson;
+      newPerson.name = name;
+      newPerson.age = age;
+      newPerson.height = height;
+      newPerson.weight = weight;
+      newPerson.bmi = bmi;
+      newPerson.runDistance = runDistance;
+      newPerson.walkDistance = walkDistance;
+      newPerson.yogaDuration = yogaDuration;
+      owners[creator] = newPerson;
+      people.push(newPerson);
+  } 
   
-  function trackWalk(uint distance) public returns(uint) {
-      walkDistance = distance;
-      return walkDistance;
-  }
   
-  function trackYoga(uint time) public returns(uint) {
-      yogaDuration = time;
-      return yogaDuration;
-  }
-  
-
 }
