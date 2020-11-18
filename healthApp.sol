@@ -17,7 +17,7 @@ contract HealthApp {
   
   Person[] public people;
   
-  mapping (address => individual) public owners;
+  mapping (address => Person) public owners;
   
   
   function track(string memory name, uint age, uint height, uint weight, uint bmi, uint runDistance, uint walkDistance, uint yogaDuration) public {
